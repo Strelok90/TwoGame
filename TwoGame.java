@@ -43,15 +43,16 @@ public class TwoGame {
         do {
             System.out.print("Введите слово: ");
             player = scanner.next();
+            if (word.equals(player)) {
+                System.out.println("Поздравляю!! Вы угадали слово.");
+                break;
+            }
             for (int i = 0; i < 15; i++)
                 if (i < word.length() && i < player.length() && word.charAt(i) == player.charAt(i))
                     System.out.print(word.charAt(i));
-                else if(word.equals((player))) System.out.print("");
-                     else
-                         System.out.print("#");
+                else System.out.print("#");
             System.out.println();
-        } while (!word.equals(player));
-        System.out.println("Поздравляю!! Вы угадали слово.");
+        } while (true);
     }
 
     public static void main(String[] args) {
